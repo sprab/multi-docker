@@ -17,8 +17,8 @@ after_success:
   # Login to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push it to docker hub.
-  - docker push -t sprab/multi-client
-  - docker push -t sprab/multi-nginx
-  - docker push -t sprab/multi-server
-  - docker push -t sprab/multi-worker
+  - docker push sprab/multi-client
+  - docker push sprab/multi-nginx
+  - docker push sprab/multi-server
+  - docker push sprab/multi-worker
 
