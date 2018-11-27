@@ -9,10 +9,10 @@ script:
   - docker run sprab/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t sprab/multi-client -f ./client
-  - docker build -t sprab/multi-nginx -f ./nginx
-  - docker build -t sprab/multi-server -f ./server
-  - docker build -t sprab/multi-worker -f ./worker
+  - docker build -t sprab/multi-client ./client
+  - docker build -t sprab/multi-nginx ./nginx
+  - docker build -t sprab/multi-server ./server
+  - docker build -t sprab/multi-worker ./worker
 
   # Login to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
